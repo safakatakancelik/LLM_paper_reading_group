@@ -174,37 +174,37 @@ GPT-1 uses a **multi-layer Transformer Decoder** stack.
 
 Let a sequence of tokens be $\mathcal{U} = (u_1, u_2, \ldots, u_T)$. By the chain rule of probability:
 
-$$P_{\theta}(\mathcal{U}) = \prod_{t=1}^{T} P_{\theta}(u_t \mid u_1, \ldots, u_{t-1}) \tag{1}$$
+$$P_{\theta}(\mathcal{U}) = \prod_{t=1}^{T} P_{\theta}(u_t \mid u_1, \ldots, u_{t-1})$$
 
 ### Maximum Likelihood Estimation
 
 Training maximizes the probability of the observed data:
 
-$$\max_{\theta} \prod_{t=1}^{T} P_{\theta}(u_t \mid u_{<t}) \tag{2}$$
+$$\max_{\theta} \prod_{t=1}^{T} P_{\theta}(u_t \mid u_1, \ldots, u_{t-1})$$
 
 ### Log-Likelihood
 
 Products of small probabilities are numerically unstable, so we take the log (using $\log(ab) = \log a + \log b$):
 
-$$\max_{\theta} \sum_{t=1}^{T} \log P_{\theta}(u_t \mid u_{<t}) \tag{3}$$
+$$\max_{\theta} \sum_{t=1}^{T} \log P_{\theta}(u_t \mid u_1, \ldots, u_{t-1})$$
 
 ### Negative Log-Likelihood (NLL) Loss
 
 Optimization algorithms minimize a loss, so we negate:
 
-$$\mathcal{L}_{\text{NLL}} = -\sum_{t=1}^{T} \log P_{\theta}(u_t \mid u_{<t}) \tag{4}$$
+$$\mathcal{L}_{\text{NLL}} = -\sum_{t=1}^{T} \log P_{\theta}(u_t \mid u_1, \ldots, u_{t-1})$$
 
 ### Cross-Entropy Equivalence
 
-The model outputs a probability distribution over vocabulary $\mathcal{V}$ via a softmax layer. Let $q_{\theta}(v \mid u_{<t})$ be the predicted probability of token $v$. Define the one-hot target:
+The model outputs a probability distribution over vocabulary $\mathcal{V}$ via a softmax layer. Let $q_{\theta}(v \mid u_1, \ldots, u_{t-1})$ be the predicted probability of token $v$. Define the one-hot target:
 
-$$y_{t,v} = \begin{cases} 1 & v = u_t \\ 0 & \text{otherwise} \end{cases} \tag{5}$$
+$$y_{t,v} = \begin{cases} 1 & \text{if } v = u_t \\ 0 & \text{otherwise} \end{cases}$$
 
-Equation (4) can then be rewritten as:
+The NLL loss can then be rewritten as:
 
-$$\mathcal{L} = -\sum_{t=1}^{T} \sum_{v \in \mathcal{V}} y_{t,v} \log q_{\theta}(v \mid u_{<t}) \tag{6}$$
+$$\mathcal{L} = -\sum_{t=1}^{T} \sum_{v \in \mathcal{V}} y_{t,v} \log q_{\theta}(v \mid u_1, \ldots, u_{t-1})$$
 
-This is exactly the **cross-entropy loss** between the true token distribution $y_t$ and the model prediction $q_{\theta}(\cdot \mid u_{<t})$.
+This is exactly the **cross-entropy loss** between the true token distribution $y_t$ and the model prediction $q_{\theta}(\cdot \mid u_1, \ldots, u_{t-1})$.
 
 > **Key insight:** Maximizing sequence likelihood, minimizing negative log-likelihood, and minimizing cross-entropy are mathematically equivalent objectives for autoregressive language models.
 
