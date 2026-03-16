@@ -8,14 +8,36 @@
 
 ## Useful Links
 
+### ML Fundamentals
+
 - [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) — A free, comprehensive introduction to ML fundamentals with interactive visualizations and exercises.
 - [Google ML Crash Course — Neural Networks](https://developers.google.com/machine-learning/crash-course/neural-networks) — The neural networks section specifically, covering perceptrons, hidden layers, and backpropagation.
 - [TensorFlow Playground](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64365&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false) — An interactive tool to experiment with neural networks in the browser. Adjust layers, neurons, activation functions, and learning rate to see how they affect classification in real time.
 - [Neural Designer — Neural Network Tutorial](https://www.neuraldesigner.com/learning/tutorials/neural-network/) — A visual tutorial walking through neural network architecture, training, and applications.
+
+### Word Embeddings & NLP
+
 - [The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/) — A visual, beginner-friendly guide to word embeddings and how words are represented as vectors.
-- [DeepLearning.AI — Natural Language Processing Resources](https://www.deeplearning.ai/resources/natural-language-processing/) — Curated NLP resources from Andrew Ng's DeepLearning.AI, covering key concepts and techniques.
 - [Vectoring Words (Word Embeddings) — Computerphile](https://www.youtube.com/watch?v=gQddtTdmG_8) — A video explanation of how words are represented as vectors (word embeddings) and why this matters for NLP.
+- [DeepLearning.AI — Natural Language Processing Resources](https://www.deeplearning.ai/resources/natural-language-processing/) — Curated NLP resources from Andrew Ng's DeepLearning.AI, covering key concepts and techniques.
+
+### Sequence Models (RNNs & LSTMs)
+
+- [Dive into Deep Learning — Recurrent Neural Networks](https://d2l.ai/chapter_recurrent-neural-networks/index.html) — A comprehensive, interactive textbook chapter on RNNs with code examples.
+- [RNN Explained — Simplelearn](https://www.youtube.com/watch?v=AsNTP8Kwu80) — A video walkthrough of how recurrent neural networks process sequential data.
+- [LSTM Explained — Simplelearn](https://www.youtube.com/watch?v=YCzL96nL7j0) — A video explanation of Long Short-Term Memory networks and how their gates control information flow.
+
+### Transformers & Attention
+
+- [Encoder-Decoder Architecture — Google Cloud Skills](https://www.skills.google/course_templates/543) — A short course on the encoder-decoder architecture that underpins the original Transformer.
+- [Transformer Models and BERT Model — Google Cloud Skills](https://www.skills.google/course_templates/538) — A short course covering Transformer architecture and the BERT model.
 - [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) — An interactive visualization that lets you see how a Transformer processes text step by step, from input tokens through attention and feed-forward layers to output predictions.
+
+### Large Language Models & RLHF
+
+- [Foundational Large Language Models & Text Generation — Google](https://drive.google.com/file/d/1mFvTxfuJg4VNutn9wBvH_URznLRkklb3/view) — A Google presentation covering the foundations of LLMs and text generation.
+- [Introduction to LLMs — Google ML Crash Course](https://developers.google.com/machine-learning/crash-course/llm) — A short course introducing large language models, how they work, and how they are trained.
+- [RLHF: Reinforcement Learning from Human Feedback — Hugging Face](https://huggingface.co/blog/rlhf) — A detailed blog post explaining the RLHF pipeline, from reward modeling to PPO, with diagrams and code references.
 
 ---
 
