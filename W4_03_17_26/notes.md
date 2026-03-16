@@ -86,7 +86,8 @@ The reward model learns to assign scalar scores to model outputs based on human 
 
 **Architecture and training:**
 - 6B parameters only (the 175B RM was unstable during training)
-- Starts from the SFT model checkpoint with the final unembedding layer removed, replaced by a linear projection to a single scalar output
+- Starts from the **SFT model checkpoint** — this is the saved set of model weights from the end of Step 1 (supervised fine-tuning). A checkpoint is a snapshot of all the model's learned parameters at a given point in training. Rather than training the reward model from scratch, the authors initialize it with these SFT weights so it already "understands" language. The weights are not frozen; they continue to be updated during reward model training.
+- The **final unembedding layer is removed**. In a normal language model, the last layer (the "unembedding" or "language model head") is a matrix that projects the model's internal representation (a vector of e.g. 4096 numbers) into a probability distribution over the entire vocabulary (e.g. 50,257 tokens). Since the reward model does not need to predict next tokens, this layer is replaced by a simple linear projection that maps the internal representation down to a **single scalar number** — the reward score.
 - Trained on 33k comparison rankings
 - For each prompt, $K = 4$ to $K = 9$ responses are ranked by labelers, producing $\binom{K}{2}$ pairwise comparisons
 - All $\binom{K}{2}$ pairs from the same prompt are trained as a single batch item (prevents overfitting and is efficient — only one forward pass per completion)
