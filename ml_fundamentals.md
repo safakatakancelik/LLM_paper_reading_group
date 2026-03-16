@@ -14,7 +14,7 @@
 - [Neural Designer — Neural Network Tutorial](https://www.neuraldesigner.com/learning/tutorials/neural-network/) — A visual tutorial walking through neural network architecture, training, and applications.
 - [The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/) — A visual, beginner-friendly guide to word embeddings and how words are represented as vectors.
 - [DeepLearning.AI — Natural Language Processing Resources](https://www.deeplearning.ai/resources/natural-language-processing/) — Curated NLP resources from Andrew Ng's DeepLearning.AI, covering key concepts and techniques.
-- [Let's build GPT: from scratch, in code — Andrej Karpathy](https://www.youtube.com/watch?v=gQddtTdmG_8) — A hands-on video walkthrough of building a GPT model from the ground up in Python.
+- [Vectoring Words (Word Embeddings) — Computerphile](https://www.youtube.com/watch?v=gQddtTdmG_8) — A video explanation of how words are represented as vectors (word embeddings) and why this matters for NLP.
 - [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) — An interactive visualization that lets you see how a Transformer processes text step by step, from input tokens through attention and feed-forward layers to output predictions.
 
 ---
