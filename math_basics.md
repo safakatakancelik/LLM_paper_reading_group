@@ -181,7 +181,7 @@ Information theory gives us principled ways to measure "surprise" and compare pr
 
 $$H(X) = -\sum_{x} p(x) \log p(x)$$
 
-(By convention, $0 \cdot \log(0) = 0$. We typically use $\log$ base 2 for bits or base $e$ for nats.)
+(By convention, $0 \cdot \log(0) = 0$. The unit of entropy depends on the log base: $\log$ base 2 gives **bits**, while $\ln$ (base $e$) gives **nats** — short for "natural units." The papers in this reading group all use $\ln$, so entropy values are in nats.)
 
 **Intuition:** Think of a weather forecaster. If the weather is *always* sunny, there is no surprise (low entropy). If it could be anything with equal probability, every day is a surprise (high entropy).
 
