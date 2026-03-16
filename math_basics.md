@@ -735,7 +735,7 @@ By convention, $0! = 1$.
 
 ### Binomial Coefficient
 
-**Definition:** $\binom{n}{k}$ (read "$n$ choose $k$") counts the number of ways to choose $k$ items from $n$ items, where order does not matter.
+**Definition:** $\binom{n}{k}$ (read "n choose k") counts the number of ways to choose $k$ items from $n$ items, where order does not matter.
 
 **Formula:**
 
