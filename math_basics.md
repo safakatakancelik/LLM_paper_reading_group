@@ -789,7 +789,15 @@ $$\prod_{i=1}^{n} a_i = a_1 \times a_2 \times a_3 \times \cdots \times a_n$$
 
 $$\prod_{i=1}^{4} i = 1 \times 2 \times 3 \times 4 = 24 \quad (= 4!)$$
 
-> **Paper Connection:** The likelihood of a sequence under a language model is a product: $\prod_{t=1}^{T} P(w_t \mid w_{<t})$. This is why we often switch to log-likelihood (turning the product into a sum) for computational convenience.
+> **Paper Connection (W3 — GPT-1):** The core training objective of GPT-1 is to maximize the likelihood of a sequence of words. Given a sentence with $T$ tokens (where $T$ is the total number of words in the sequence), the probability of the full sentence is the product of each word's probability given all the words before it:
+>
+> $$\prod_{t=1}^{T} P(w_t \mid w_1, w_2, \ldots, w_{t-1})$$
+>
+> For example, for the sentence "The cat sat" ($T = 3$):
+>
+> $$P(\text{The}) \times P(\text{cat} \mid \text{The}) \times P(\text{sat} \mid \text{The, cat})$$
+>
+> Each factor is a conditional probability — "how likely is this word given everything before it?" The product of all of them gives the probability of the entire sentence. In practice, we take the log to turn this product into a sum (see [Softmax & Logarithms](#6-softmax--logarithms) for why), giving us the log-likelihood used as the training loss.
 
 ---
 
