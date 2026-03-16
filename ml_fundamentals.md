@@ -12,6 +12,9 @@
 - [Google ML Crash Course — Neural Networks](https://developers.google.com/machine-learning/crash-course/neural-networks) — The neural networks section specifically, covering perceptrons, hidden layers, and backpropagation.
 - [TensorFlow Playground](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.64365&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false) — An interactive tool to experiment with neural networks in the browser. Adjust layers, neurons, activation functions, and learning rate to see how they affect classification in real time.
 - [Neural Designer — Neural Network Tutorial](https://www.neuraldesigner.com/learning/tutorials/neural-network/) — A visual tutorial walking through neural network architecture, training, and applications.
+- [The Illustrated Word2Vec](https://jalammar.github.io/illustrated-word2vec/) — A visual, beginner-friendly guide to word embeddings and how words are represented as vectors.
+- [DeepLearning.AI — Natural Language Processing Resources](https://www.deeplearning.ai/resources/natural-language-processing/) — Curated NLP resources from Andrew Ng's DeepLearning.AI, covering key concepts and techniques.
+- [Let's build GPT: from scratch, in code — Andrej Karpathy](https://www.youtube.com/watch?v=gQddtTdmG_8) — A hands-on video walkthrough of building a GPT model from the ground up in Python.
 - [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) — An interactive visualization that lets you see how a Transformer processes text step by step, from input tokens through attention and feed-forward layers to output predictions.
 
 ---
