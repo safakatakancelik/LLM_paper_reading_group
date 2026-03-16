@@ -478,9 +478,16 @@ This was designed for translation (e.g., English in, French out). GPT models sim
 The "×N" means this entire block is repeated N times (stacked). GPT-2 uses N=12 (small) to N=48 (XL). GPT-3 uses N=96.
 
 Each block contains:
-1. **Masked self-attention** + residual connection + layer norm
-2. **Cross-attention** to the encoder (in the full Transformer; GPT omits this)
-3. **Feed-forward network** + residual connection + layer norm
+1. **Masked self-attention** + Add&Norm
+2. **Cross-attention** to the encoder (in the full Transformer; GPT omits this) + Add&Norm
+3. **Feed-forward network** + Add&Norm
+
+**What is Add&Norm?** This is shorthand for two operations that happen after every sub-layer (attention or feed-forward):
+
+- **Add (residual connection):** Instead of replacing the input with the sub-layer's output, we *add* the input back to the output: $\text{output} = \text{sublayer}(x) + x$. This creates a "skip connection" — if the sub-layer learns nothing useful, the original signal passes through unchanged. Residual connections are critical for training deep networks because they prevent the gradient from vanishing as it flows backward through many layers.
+- **Norm (layer normalization):** After adding, we normalize the values across each token's features so they have a consistent mean and variance. This keeps numbers in a stable range and helps training converge faster. Think of it as recalibrating after each processing step.
+
+**What is the feed-forward network?** This is a small two-layer neural network (an MLP) applied independently to each token's representation. It consists of: Linear layer → activation (GELU in GPT) → Linear layer. The first linear layer typically expands the dimension by 4× (e.g., from 768 to 3072 in GPT-1), and the second projects it back down. While self-attention lets tokens *communicate* with each other, the feed-forward network lets each token *process* that information individually — it is where much of the model's learned "knowledge" is stored.
 
 ---
 
