@@ -720,7 +720,7 @@ Already very close to 1.
 
 ### Factorial Notation
 
-**Definition:** $n!$ (read "$n$ factorial") is the product of all positive integers from 1 to $n$.
+**Definition:** $n!$ (read "n factorial") is the product of all positive integers from 1 to $n$.
 
 $$n! = n \times (n-1) \times (n-2) \times \cdots \times 2 \times 1$$
 
